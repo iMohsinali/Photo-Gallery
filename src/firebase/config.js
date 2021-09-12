@@ -1,18 +1,24 @@
-// Your web app's Firebase configuration
-import * as firbase from './firebase/app'
-import 'firebase/storage'
-import 'firebase/firestore'
-const firebaseConfig = {
-    apiKey: "AIzaSyD3i9V11-sm11Oe8gUcnmnIbSzemDrxmmY",
-    authDomain: "gilgitbaltistan-6fc54.firebaseapp.com",
-    projectId: "gilgitbaltistan-6fc54",
-    storageBucket: "gilgitbaltistan-6fc54.appspot.com",
-    messagingSenderId: "308929947806",
-    appId: "1:308929947806:web:1127e64ada4f7f2f7af38f"
+import firebase from 'firebase/compat/app';
+
+import 'firebase/compat/storage';
+
+import 'firebase/compat/firestore';
+
+var firebaseConfig = {
+    apiKey: "AIzaSyDLmnoBvnjOQ-AaJgDw1DnVBiTETbcp8LI",
+    authDomain: "the-net-ninja-sandbox.firebaseapp.com",
+    databaseURL: "https://the-net-ninja-sandbox.firebaseio.com",
+    projectId: "the-net-ninja-sandbox",
+    storageBucket: "the-net-ninja-sandbox.appspot.com",
+    messagingSenderId: "485942827092",
+    appId: "1:485942827092:web:1811d9d8f1f5fabcd5b5c1"
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const projectstore = firbase.storage()
-const projectbase = firbase.firestore()
-export { projectbase, projectstore }
+firebase.initializeApp(firebaseConfig);
+
+const projectStorage = firebase.storage();
+const projectFirestore = firebase.firestore();
+const timestamp = firebase.firestore.FieldValue.serverTimestamp;
+
+export { projectStorage, projectFirestore, timestamp };
