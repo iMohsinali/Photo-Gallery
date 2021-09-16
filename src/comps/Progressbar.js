@@ -1,8 +1,12 @@
 import React from 'react'
 import useStorge from '../hook/useStorge'
-const Progressbar = () => {
+
+const Progressbar = ({ file, setfile }) => {
+    const { url, progress } = useStorge(file);
+
     return (
-        <div className='prgress-bar'>
+
+        <div className='progress-bar'>
             progrsess
         </div>
     )

@@ -29,7 +29,7 @@ const Uploadform = () => {
 
                 }
                 {
-                    file && <Progressbar />
+                    file && <Progressbar file={file} setfile={setfile} />
 
                 }
             </div>
